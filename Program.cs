@@ -16,11 +16,11 @@ namespace APBD_06
             var host = CreateHostBuilder(args).Build();
             var logger = host.Services.GetRequiredService<ILogger<Program>>();
 
-            // Pobierz connection string
+           
             var configuration = host.Services.GetRequiredService<IConfiguration>();
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            // Inicjalizacja bazy danych
+           
             try
             {
                 await DatabaseInitializer.InitializeAsync(connectionString, logger);
